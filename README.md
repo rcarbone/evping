@@ -12,7 +12,7 @@ Please, make sure you have the autotools installed.
 ```
    1> cd evping
    2> sh add-ping.sh
-   3> cd libevent-2.0.22-stable/sample
+   3> cd libevent/sample
    4> sudo ./eping tecsiel.it libevent.org
 
       Warning:
@@ -39,7 +39,8 @@ to the libevent source tree.
 
 
 The code was originally wrote for libevent 2.0.X-alpha series I think,
-but I recently ported it compile and use the latest libevent-2.0.22-stable.
+but I recently ported it compile and use the latest libevent available
+from github repository.
 
 
 What I did to add the ping protocol
