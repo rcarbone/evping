@@ -36,7 +36,7 @@
 
 /* Libevent header file(s) */
 #include "event2/event.h"
-#include "event2/ping.h"
+#include "event2/evping.h"
 
 
 static struct event_base * base = NULL;
@@ -63,12 +63,13 @@ static void callback (int result, int bytes, char * fqname, char * dotname,
   switch (result)
     {
     case PING_ERR_NONE:
-      printf ("%d bytes from %s (%s): icmp_seq=%d ttl=%d time=%.3f ms\n",
-	      bytes, fqname, dotname, seq, ttl, (float) tvtousecs (elapsed) / 1000);
+      printf ("%d bytes from %s (%s): icmp_seq=%d ttl=%d time=%ld ms\n",
+	      bytes, fqname, dotname, seq, ttl, tvtousecs (elapsed) / 1000);
       break;
 
     case PING_ERR_TIMEOUT:
-      printf ("time out with %s (%s): icmp_seq=%d time=%3.f ms\n", fqname, dotname, seq, (float) tvtousecs (elapsed) / 1000);
+      printf ("time out with %s (%s): icmp_seq=%d time=%ld ms\n",
+	      fqname, dotname, seq, tvtousecs (elapsed) / 1000);
       break;
 
     default:

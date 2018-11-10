@@ -1,0 +1,17 @@
+# all in [libevent]
+libevent/
+
+# Static libraries
+*.a
+
+# Shared libraries
+*.so
+
+# Object files
+*.o
+
+# Dependency files
+*.M
+
+# Backup files
+*~

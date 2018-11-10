@@ -27,6 +27,6 @@
 #define _EVPING_H_
 
 #include <event.h>
-#include <event2/ping.h>
+#include <ping.h>
 
 #endif /* _EVPING_H_ */

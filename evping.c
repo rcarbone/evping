@@ -40,7 +40,7 @@
 
 #include <event2/event.h>
 #include <event2/event_struct.h>
-#include <event2/ping.h>
+#include <event2/evping.h>
 #include <event2/thread.h>
 
 #include "mm-internal.h"
@@ -139,7 +139,7 @@ struct evping_base {
 
 	evutil_socket_t rawfd;	       /* Raw socket used to ping hosts              */
 
-	uint32_t pktsize;              /* Packet size in bytes (ICMP plus User Data) */
+	int32_t pktsize;               /* Packet size in bytes (ICMP plus User Data) */
 	pid_t pid;                     /* Identifier to send with each ICMP Request  */
 
 	struct timeval tv_noreply;     /* ICMP Echo Reply timeout                    */
@@ -658,7 +658,7 @@ evping_stats(struct evping_base *base)
 		goto done;
 	do {
 	  	printf("--- %s ping statistics ---\n"
-		       "%lld packets transmitted, %lld received, %.2f%% packet loss, time %.1fms\n",
+		       "%lu packets transmitted, %lu received, %.2f%% packet loss, time %.1fms\n",
 		       host->fqname, host->sentpkts, host->recvpkts,
 		       100.0 * (host->sentpkts - host->recvpkts) / ((double) host->sentpkts),
 		       host->sum / 1000.0);
