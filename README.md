@@ -1,3 +1,5 @@
+# evping
+
 <preface>
 
 If you are impatient and not interested in the full story,
@@ -7,6 +9,7 @@ here is the download button:
 
 Please, make sure you have the autotools installed.
 
+```
    1> cd evping
    2> sh add-ping.sh
    3> cd libevent-2.0.22-stable/sample
@@ -15,7 +18,7 @@ Please, make sure you have the autotools installed.
       Warning:
         You need super-user permissions to run the example program because
         using a raw socket for ICMP calls is a privileged operation.
-
+```
 </preface>
 
 
@@ -59,7 +62,7 @@ What I missed
 
 Example
 =======
-
+```
 rocco@home 14> sudo ./eping tecsiel.it libevent.org
 #2 hosts being pinged
 PING ns.tecsiel.it (78.47.99.151) 68(96) bytes of data.
@@ -83,3 +86,4 @@ rtt min/avg/max/sdev = 52.660/53.252/54.059/0.548 ms
 --- pages.github.com ping statistics ---
 5 packets transmitted, 5 received, 0.00% packet loss, time 676.0ms
 rtt min/avg/max/sdev = 130.321/135.199/149.782/8.284 ms
+```
